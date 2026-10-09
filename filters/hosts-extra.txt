@@ -1,0 +1,81 @@
+# Break Reklams — поддомены для hosts-файла.
+# hosts, в отличие от расширения, не умеет блокировать домен вместе со всеми поддоменами:
+# строка «0.0.0.0 doubleclick.net» не закрывает securepubads.g.doubleclick.net.
+# Поэтому известные адреса рекламных серверов перечислены здесь явно. По одному в строке.
+
+# ── Google: реклама ──
+pagead2.googlesyndication.com
+tpc.googlesyndication.com
+googleads.g.doubleclick.net
+securepubads.g.doubleclick.net
+stats.g.doubleclick.net
+cm.g.doubleclick.net
+ad.doubleclick.net
+static.doubleclick.net
+s0.2mdn.net
+www.googleadservices.com
+partner.googleadservices.com
+adservice.google.com
+www.googletagservices.com
+
+# ── Google Analytics ──
+www.google-analytics.com
+ssl.google-analytics.com
+region1.google-analytics.com
+
+# ── Рекламные сети ──
+c.amazon-adsystem.com
+aax.amazon-adsystem.com
+s.amazon-adsystem.com
+ib.adnxs.com
+secure.adnxs.com
+acdn.adnxs.com
+cdn.taboola.com
+trc.taboola.com
+widgets.outbrain.com
+odb.outbrain.com
+jsc.mgid.com
+servicer.mgid.com
+static.criteo.net
+bidder.criteo.com
+sslwidget.criteo.com
+
+# ── Счётчики и запись сессий ──
+bat.bing.com
+www.clarity.ms
+static.hotjar.com
+script.hotjar.com
+sb.scorecardresearch.com
+b.scorecardresearch.com
+pixel.quantserve.com
+secure.quantserve.com
+static.chartbeat.com
+ping.chartbeat.net
+
+# ── Рунет ──
+mc.yandex.ru
+mc.yandex.com
+an.yandex.ru
+yabs.yandex.ru
+ad.mail.ru
+top-fwz1.mail.ru
+r.mradx.net
+ads.vk.com
+
+# ── Реклама в плеерах аниме- и кино-сайтов (Kodik/Alloha/Collaps) ──
+vast.ufouxbwn.com
+vast2.ufouxbwn.com
+im1.ufouxbwn.com
+code.21wiz.com
+static.21wiz.com
+logger.21wiz.com
+z.cdn.traffmovie.com
+res71.traffer.net
+wrapper.bracdn.online
+a.suprion.ru
+code.moviead55.ru
+logger.moviead55.ru
+epom.mbt-8.com
+cdn.mbt-8.com
+cdn.timing-js-menu.xyz
+pc.alloviewroll.com

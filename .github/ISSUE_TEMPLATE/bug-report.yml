@@ -1,0 +1,37 @@
+name: Сайт сломался
+description: С включённым Break Reklams сайт работает неправильно, а без него — нормально
+labels: [поломка]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Адрес страницы
+      placeholder: https://example.com/page
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: Что не работает
+      description: Например, не запускается видео, не нажимается кнопка, пустая страница.
+    validations:
+      required: true
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Браузер
+      options:
+        - Chrome
+        - Edge
+        - Яндекс.Браузер
+        - Opera
+        - Brave
+        - Firefox
+        - Другой
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Версия Break Reklams
+      description: Видна внизу страницы настроек расширения.

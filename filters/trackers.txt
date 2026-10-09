@@ -1,0 +1,84 @@
+[Adblock Plus 2.0]
+! Title: Break Reklams — трекеры и аналитика
+!
+! ════════ Заглушки (сайты ждут колбэков от аналитики — отдаём их сразу) ════════
+||google-analytics.com/analytics.js$script,redirect=google-analytics_analytics.js
+||googletagmanager.com/gtm.js$script,redirect=googletagmanager_gtm.js
+||googletagmanager.com/gtag/js$script,redirect=googletagmanager_gtm.js
+!
+! ════════ Google ════════
+||google-analytics.com^
+||analytics.google.com^
+||googletagmanager.com^
+||youtube.com/ptracking
+!
+! ════════ Соцсети ════════
+||connect.facebook.net/*/fbevents.js
+||connect.facebook.net/signals/
+||facebook.com/tr^
+||px.ads.linkedin.com^
+||snap.licdn.com/li.lms-analytics/
+||analytics.tiktok.com^
+||analytics.twitter.com^
+||static.ads-twitter.com^
+||t.co/i/adsct
+||ct.pinterest.com^
+||tr.snapchat.com^
+||sc-static.net/scevent.min.js
+||bat.bing.com^
+||clarity.ms^
+||vk.com/rtrg
+!
+! ════════ Аналитика и запись сессий ════════
+||hotjar.com^$third-party
+||hotjar.io^
+||api.mixpanel.com^$third-party
+||mxpnl.com^
+||cdn.segment.com^
+||api.segment.io^
+||api.amplitude.com^$third-party
+||api2.amplitude.com^$third-party
+||cdn.amplitude.com^$third-party
+||fullstory.com^$third-party
+||mouseflow.com^$third-party
+||crazyegg.com^$third-party
+||heapanalytics.com^
+||inspectlet.com^$third-party
+||luckyorange.com^$third-party
+||luckyorange.net^
+||rec.smartlook.com^
+||quantserve.com^
+||quantcount.com^
+||scorecardresearch.com^
+||chartbeat.com^
+||chartbeat.net^
+||nr-data.net^
+||js-agent.newrelic.com^
+||hs-analytics.net^
+||pixel.wp.com^
+||stats.wp.com^
+!
+! ════════ Брокеры данных ════════
+||demdex.net^
+||omtrdc.net^
+||2o7.net^
+||everesttech.net^
+||krxd.net^
+||bluekai.com^
+||exelator.com^
+||rlcdn.com^
+||agkn.com^
+||mathtag.com^
+||tapad.com^
+||bounceexchange.com^
+!
+! ════════ Рунет ════════
+||mc.yandex.
+||cdn.jsdelivr.net/npm/yandex-metrica-watch/
+||mc.webvisor.org^
+||mc.webvisor.com^
+||top-fwz1.mail.ru^
+||counter.yadro.ru^
+||tns-counter.ru^
+||counter.rambler.ru^
+||openstat.net^

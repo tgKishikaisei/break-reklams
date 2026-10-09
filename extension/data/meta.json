@@ -1,0 +1,126 @@
+{
+  "version": "1.0.0",
+  "builtAt": "2026-10-09T16:43:38.037Z",
+  "lists": [
+    {
+      "id": "br-ads",
+      "title": "Break Reklams: реклама",
+      "category": "ads",
+      "present": true,
+      "external": false,
+      "network": 176,
+      "cosmetic": 103,
+      "scriptlets": 1,
+      "unsupported": 0
+    },
+    {
+      "id": "br-trackers",
+      "title": "Break Reklams: трекеры",
+      "category": "trackers",
+      "present": true,
+      "external": false,
+      "network": 70,
+      "cosmetic": 0,
+      "scriptlets": 0,
+      "unsupported": 0
+    },
+    {
+      "id": "br-annoyances",
+      "title": "Break Reklams: cookie-баннеры",
+      "category": "annoyances",
+      "present": true,
+      "external": false,
+      "network": 1,
+      "cosmetic": 33,
+      "scriptlets": 0,
+      "unsupported": 0
+    },
+    {
+      "id": "easylist",
+      "title": "EasyList",
+      "category": "ads",
+      "present": false,
+      "external": true
+    },
+    {
+      "id": "adguard-russian",
+      "title": "AdGuard Russian",
+      "category": "ads",
+      "present": false,
+      "external": true
+    },
+    {
+      "id": "ruadlist",
+      "title": "RU AdList",
+      "category": "ads",
+      "present": false,
+      "external": true
+    },
+    {
+      "id": "peter-lowe",
+      "title": "Peter Lowe's Ad and tracking server list",
+      "category": "ads",
+      "present": false,
+      "external": true
+    },
+    {
+      "id": "easyprivacy",
+      "title": "EasyPrivacy",
+      "category": "trackers",
+      "present": false,
+      "external": true
+    },
+    {
+      "id": "easylist-cookie",
+      "title": "EasyList Cookie",
+      "category": "annoyances",
+      "present": false,
+      "external": true
+    }
+  ],
+  "rules": {
+    "ads": {
+      "rules": 24,
+      "dropped": 0
+    },
+    "trackers": {
+      "rules": 23,
+      "dropped": 0
+    },
+    "annoyances": {
+      "rules": 1,
+      "dropped": 0
+    }
+  },
+  "scriptlets": {
+    "hosts": 1,
+    "entries": 1,
+    "skipped": 0
+  },
+  "cosmetic": {
+    "ads": {
+      "keyed": 49,
+      "broad": 21,
+      "sites": 4,
+      "specific": 33
+    },
+    "annoyances": {
+      "keyed": 32,
+      "broad": 1,
+      "sites": 0,
+      "specific": 0
+    }
+  },
+  "redirects": [
+    "noop.js",
+    "noop.txt",
+    "noop.html",
+    "noop.css",
+    "1x1.gif",
+    "googlesyndication_adsbygoogle.js",
+    "googletagservices_gpt.js",
+    "google-analytics_analytics.js",
+    "googletagmanager_gtm.js",
+    "nofab.js"
+  ]
+}

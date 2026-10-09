@@ -1,0 +1,42 @@
+[Adblock Plus 2.0]
+! Title: Break Reklams — cookie-баннеры и прочие раздражители
+! Включается в настройках («Cookie-баннеры»). По умолчанию выключено.
+!
+||fundingchoicesmessages.google.com^
+!
+! ════════ Популярные платформы согласия (CMP) ════════
+###onetrust-banner-sdk
+###onetrust-consent-sdk
+###CybotCookiebotDialog
+###CybotCookiebotDialogBodyUnderlay
+###usercentrics-root
+###didomi-host
+##body.didomi-popup-open:style(overflow: auto)
+##[id^="sp_message_container_"]
+##html.sp-message-open:style(overflow: auto)
+##.qc-cmp2-container
+###qc-cmp2-container
+###truste-consent-track
+##.truste_box_overlay
+##.fc-consent-root
+###cmpbox
+###cmpbox2
+##.cmpboxBG
+###cookiescript_injected
+###cookie-law-info-bar
+!
+! ════════ Типовые cookie-плашки ════════
+##.cc-window
+##.cc-banner
+###cookie-notice
+##.cookie-notice
+###cookie-banner
+##.cookie-banner
+##.cookies-banner
+###cookieConsent
+###cookie-consent
+##.cookie-consent
+###cookie-bar
+##.cookie-bar
+##.js-cookie-consent
+###gdpr-cookie-message

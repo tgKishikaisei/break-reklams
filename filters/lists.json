@@ -1,0 +1,51 @@
+{
+  "$comment": "Списки фильтров. Встроенные (file без urls) лежат рядом; внешние скачивает `npm run update` в filters/external/. Бюджет — сколько DNR-правил выделить категории (Chrome гарантирует 30 000 на расширение).",
+  "budget": { "ads": 21000, "trackers": 8000, "annoyances": 1000 },
+  "lists": [
+    { "id": "br-ads", "title": "Break Reklams: реклама", "category": "ads", "file": "ads.txt" },
+    { "id": "br-trackers", "title": "Break Reklams: трекеры", "category": "trackers", "file": "trackers.txt" },
+    { "id": "br-annoyances", "title": "Break Reklams: cookie-баннеры", "category": "annoyances", "file": "annoyances.txt" },
+    {
+      "id": "easylist",
+      "title": "EasyList",
+      "category": "ads",
+      "file": "external/easylist.txt",
+      "urls": ["https://easylist.to/easylist/easylist.txt", "https://easylist-downloads.adblockplus.org/easylist.txt"]
+    },
+    {
+      "id": "adguard-russian",
+      "title": "AdGuard Russian",
+      "category": "ads",
+      "file": "external/adguard-russian.txt",
+      "urls": ["https://filters.adtidy.org/extension/ublock/filters/1.txt"]
+    },
+    {
+      "id": "ruadlist",
+      "title": "RU AdList",
+      "category": "ads",
+      "file": "external/ruadlist.txt",
+      "urls": ["https://easylist-downloads.adblockplus.org/advblock.txt", "https://easylist-downloads.adblockplus.org/ruadlist.txt"]
+    },
+    {
+      "id": "peter-lowe",
+      "title": "Peter Lowe's Ad and tracking server list",
+      "category": "ads",
+      "file": "external/peter-lowe.txt",
+      "urls": ["https://pgl.yoyo.org/adservers/serverlist.php?hostformat=adblockplus&showintro=0&mimetype=plaintext"]
+    },
+    {
+      "id": "easyprivacy",
+      "title": "EasyPrivacy",
+      "category": "trackers",
+      "file": "external/easyprivacy.txt",
+      "urls": ["https://easylist.to/easylist/easyprivacy.txt", "https://easylist-downloads.adblockplus.org/easyprivacy.txt"]
+    },
+    {
+      "id": "easylist-cookie",
+      "title": "EasyList Cookie",
+      "category": "annoyances",
+      "file": "external/easylist-cookie.txt",
+      "urls": ["https://secure.fanboy.co.nz/fanboy-cookiemonster.txt"]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Break Reklams</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="top">
+    <svg class="logo" viewBox="0 0 100 100" aria-hidden="true">
+      <defs>
+        <linearGradient id="lg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="var(--logo-top)"/>
+          <stop offset="1" stop-color="var(--logo-bottom)"/>
+        </linearGradient>
+      </defs>
+      <path d="M22 5h56a13 13 0 0 1 13 13v32c0 22-18 38-41 46C27 88 9 72 9 50V18A13 13 0 0 1 22 5z" fill="url(#lg)"/>
+      <circle cx="50" cy="46" r="20.5" fill="none" stroke="#fff" stroke-width="8"/>
+      <line x1="36" y1="32" x2="64" y2="60" stroke="#fff" stroke-width="8"/>
+    </svg>
+    <div class="brand">
+      <div class="name">Break Reklams</div>
+      <div class="status" id="status">Защита включена</div>
+    </div>
+    <button id="power" class="power" role="switch" aria-checked="true" title="Включить или выключить защиту">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v8M6.3 6.3a8 8 0 1 0 11.4 0" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+    </button>
+  </header>
+
+  <section class="site">
+    <div class="site-info">
+      <div class="site-label">Текущий сайт</div>
+      <div class="site-host" id="host">—</div>
+    </div>
+    <label class="switch" title="Блокировать рекламу на этом сайте">
+      <input type="checkbox" id="site-toggle">
+      <span class="track"><span class="thumb"></span></span>
+    </label>
+  </section>
+
+  <section class="stats" id="stats">
+    <div class="stat">
+      <div class="num" id="page-blocked">—</div>
+      <div class="lbl" id="page-blocked-lbl">запросов<br>заблокировано</div>
+    </div>
+    <div class="stat">
+      <div class="num" id="page-hidden">—</div>
+      <div class="lbl" id="page-hidden-lbl">элементов<br>скрыто</div>
+    </div>
+    <div class="stat total">
+      <div class="num" id="total-blocked">—</div>
+      <div class="lbl">всего<br>за всё время</div>
+    </div>
+  </section>
+
+  <div class="access" id="access" hidden>
+    <span>Разрешите доступ к сайтам, иначе работает только часть защиты.</span>
+    <button id="grant" class="btn primary">Разрешить</button>
+  </div>
+
+  <section class="actions">
+    <button id="pick" class="btn primary">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l6.5 16 2.3-6.7L19.5 11z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      Убрать элемент
+    </button>
+    <button id="options" class="btn" title="Настройки">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.8v2.4M12 18.8v2.4M4.2 7.5l2.1 1.2M17.7 15.3l2.1 1.2M4.2 16.5l2.1-1.2M17.7 8.7l2.1-1.2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      Настройки
+    </button>
+  </section>
+
+  <p class="hint" id="hint">Совет: правый клик по рекламе → «Break Reklams: убрать этот элемент» или Alt+Shift+X.</p>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

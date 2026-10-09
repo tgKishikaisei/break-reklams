@@ -1,0 +1,19 @@
+# Единые переводы строк в репозитории (LF), независимо от ОС.
+* text=auto eol=lf
+
+# Скрипты Windows — с CRLF, иначе cmd.exe и PowerShell 5.1 могут их неправильно прочитать.
+*.cmd text eol=crlf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# Бинарные файлы
+*.png binary
+*.gif binary
+*.ico binary
+*.zip binary
+*.xpi binary
+
+# Собранные правила не показываем в diff построчно (это результат npm run build).
+extension/rules/*.json linguist-generated=true -diff
+extension/data/*.json linguist-generated=true
+extension/generated/*.js linguist-generated=true

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Fake YouTube</title>
+  <script>
+    var ytInitialPlayerResponse = { videoDetails: { videoId: 'test' }, adPlacements: [{ ad: 1 }], playerAds: [{ ad: 1 }] };
+    window.__yt = {
+      initialHasAds: 'adPlacements' in ytInitialPlayerResponse || 'playerAds' in ytInitialPlayerResponse,
+      initialKeepsData: 'videoDetails' in ytInitialPlayerResponse,
+    };
+    const parsed = JSON.parse('{"adPlacements":[1],"playerAds":[1],"streamingData":{}}');
+    __yt.parseHasAds = 'adPlacements' in parsed || 'playerAds' in parsed;
+    __yt.parseKeepsData = 'streamingData' in parsed;
+    fetch('/youtubei/v1/player', { method: 'POST' })
+      .then((r) => r.json())
+      .then((j) => {
+        __yt.fetchHasAds = 'adPlacements' in j || 'playerAds' in j;
+        __yt.fetchKeepsData = 'videoDetails' in j;
+      });
+  </script>
+</head>
+<body>
+  <ytd-ad-slot-renderer id="feed-ad">Реклама в ленте</ytd-ad-slot-renderer>
+  <div id="movie_player" class="html5-video-player ad-showing">
+    <video class="html5-main-video"></video>
+    <button class="ytp-skip-ad-button"
+      onclick="window.__yt.skipped = true; document.getElementById('movie_player').classList.remove('ad-showing')">Пропустить</button>
+  </div>
+</body>
+</html>

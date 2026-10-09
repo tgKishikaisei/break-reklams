@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Break Reklams — настройки</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-inner">
+      <svg class="logo" viewBox="0 0 100 100" aria-hidden="true">
+        <defs>
+          <linearGradient id="lg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ff5252"/>
+            <stop offset="1" stop-color="#c62828"/>
+          </linearGradient>
+        </defs>
+        <path d="M22 5h56a13 13 0 0 1 13 13v32c0 22-18 38-41 46C27 88 9 72 9 50V18A13 13 0 0 1 22 5z" fill="url(#lg)"/>
+        <circle cx="50" cy="46" r="20.5" fill="none" stroke="#fff" stroke-width="8"/>
+        <line x1="36" y1="32" x2="64" y2="60" stroke="#fff" stroke-width="8"/>
+      </svg>
+      <div class="hero-text">
+        <h1>Break Reklams</h1>
+        <p>Блокировщик рекламы, трекеров и всплывающих окон</p>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-num" id="total">0</div>
+        <div class="hero-lbl" id="total-lbl">заблокировано запросов</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card access" id="access" hidden>
+      <h2>Нужен доступ к сайтам</h2>
+      <p>Браузер пока не дал Break Reklams доступ к страницам. Без него работает только блокировка запросов, а реклама в плеерах, скрытие блоков и обход «отключите AdBlock» — нет.</p>
+      <button class="btn primary" id="grant-access">Разрешить доступ ко всем сайтам</button>
+    </section>
+
+    <section class="card welcome" id="welcome" hidden>
+      <h2>Готово — реклама уже блокируется</h2>
+      <p>Закрепите значок <b>Break Reklams</b> на панели браузера (значок пазла → булавка), чтобы видеть счётчик и быстро отключать блокировку на отдельных сайтах.</p>
+      <p>Осталась реклама? Кликните по ней правой кнопкой → <b>«Break Reklams: убрать этот элемент»</b> или нажмите <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd>.</p>
+    </section>
+
+    <section class="card">
+      <h2>Защита</h2>
+      <div class="toggles" id="toggles">
+        <label class="toggle main">
+          <span class="t-text"><b>Блокировщик включён</b><small>Главный выключатель. Если выключить — вся фильтрация останавливается.</small></span>
+          <input type="checkbox" data-key="enabled"><span class="track"><span class="thumb"></span></span>
+        </label>
+        <label class="toggle">
+          <span class="t-text"><b>Трекеры и аналитика</b><small>Google Analytics, Яндекс.Метрика, пиксели Facebook/TikTok/VK, запись сессий (Hotjar и др.).</small></span>
+          <input type="checkbox" data-key="trackers"><span class="track"><span class="thumb"></span></span>
+        </label>
+        <label class="toggle">
+          <span class="t-text"><b>Реклама на YouTube</b><small>Вырезает рекламу из ответа плеера. Если ролик всё же прорвался — глушит звук, проматывает и жмёт «Пропустить».</small></span>
+          <input type="checkbox" data-key="youtube"><span class="track"><span class="thumb"></span></span>
+        </label>
+        <label class="toggle">
+          <span class="t-text"><b>Реклама в видеоплеерах</b><small>Kodik, Alloha, Collaps и другие плееры на сайтах: рекламный ролик перед серией не загружается, видео стартует сразу.</small></span>
+          <input type="checkbox" data-key="videoAds"><span class="track"><span class="thumb"></span></span>
+        </label>
+        <label class="toggle">
+          <span class="t-text"><b>Всплывающие окна</b><small>Закрывает рекламные вкладки (поп-андеры) и убирает невидимые слои, которые перехватывают клики.</small></span>
+          <input type="checkbox" data-key="popups"><span class="track"><span class="thumb"></span></span>
+        </label>
+        <label class="toggle">
+          <span class="t-text"><b>Обход «Отключите AdBlock»</b><small>Убирает окна с требованием отключить блокировщик и возвращает прокрутку страницы. Детекторы на известных сайтах обезвреживаются скриптлетами из списков фильтров.</small></span>
+          <input type="checkbox" data-key="antiAdblock"><span class="track"><span class="thumb"></span></span>
+        </label>
+        <label class="toggle">
+          <span class="t-text"><b>Cookie-баннеры</b><small>Прячет уведомления о cookie и согласии. Редко, но может помешать сайтам, которые без согласия не работают.</small></span>
+          <input type="checkbox" data-key="annoyances"><span class="track"><span class="thumb"></span></span>
+        </label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Сайты-исключения</h2>
+      <p class="muted">На этих сайтах реклама не блокируется. По одному домену в строке, поддомены включаются автоматически.</p>
+      <textarea id="allowlist" rows="5" spellcheck="false" placeholder="example.com&#10;shop.example.org"></textarea>
+      <div class="row">
+        <button class="btn primary" id="save-allowlist">Сохранить</button>
+        <span class="note" id="allowlist-note" role="status"></span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Мои фильтры</h2>
+      <p class="muted">Синтаксис Adblock Plus / uBlock Origin. Сюда же попадают элементы, убранные пипеткой.</p>
+      <details class="syntax">
+        <summary>Шпаргалка по синтаксису</summary>
+        <table>
+          <tr><td><code>||ads.example.com^</code></td><td>блокировать домен и все его поддомены</td></tr>
+          <tr><td><code>||example.com/banners/*</code></td><td>блокировать адреса по шаблону</td></tr>
+          <tr><td><code>||tracker.net^$third-party</code></td><td>только со сторонних сайтов</td></tr>
+          <tr><td><code>||cdn.net/ad.js$script,domain=site.ru</code></td><td>только скрипты и только на site.ru</td></tr>
+          <tr><td><code>@@||example.com/ads.js</code></td><td>исключение — разрешить</td></tr>
+          <tr><td><code>site.ru##.promo-block</code></td><td>скрыть элемент на site.ru</td></tr>
+          <tr><td><code>##.sponsored-banner</code></td><td>скрыть элемент на всех сайтах</td></tr>
+          <tr><td><code>site.ru#@#.ad-banner</code></td><td>не скрывать этот элемент на site.ru</td></tr>
+          <tr><td><code>0.0.0.0 ads.example.com</code></td><td>строки из hosts-файлов тоже подходят</td></tr>
+        </table>
+      </details>
+      <textarea id="filters" rows="12" spellcheck="false" placeholder="! Комментарий&#10;||ads.example.com^&#10;example.com##.banner"></textarea>
+      <div class="row">
+        <button class="btn primary" id="save-filters">Сохранить и применить</button>
+        <span class="note" id="filters-note" role="status"></span>
+      </div>
+      <ul class="report" id="filters-report" hidden></ul>
+    </section>
+
+    <section class="card">
+      <h2>Списки фильтров</h2>
+      <p class="muted" id="meta-built"></p>
+      <table class="lists">
+        <thead><tr><th>Список</th><th>Сеть</th><th>Косметика</th><th>Статус</th></tr></thead>
+        <tbody id="lists"></tbody>
+      </table>
+      <p class="muted small">Правил в наборах: <span id="meta-rules"></span>.
+        Большие списки (EasyList, EasyPrivacy, AdGuard Russian и др.) подключаются командой <code>npm run update</code>
+        в папке проекта, после чего расширение нужно перезагрузить на странице <code>chrome://extensions</code>.</p>
+    </section>
+
+    <section class="card">
+      <h2>Статистика</h2>
+      <p class="muted" id="stats-since"></p>
+      <button class="btn" id="reset-stats">Сбросить счётчик</button>
+    </section>
+
+    <footer class="foot">Break Reklams <span id="version"></span> · работает локально, ничего никуда не отправляет</footer>
+  </main>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>

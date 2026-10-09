@@ -1,0 +1,35 @@
+name: Release
+
+# Выпуск: git tag v1.0.1 && git push --tags — архивы появятся на странице Releases.
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+      - name: Сборка архивов и hosts-файла
+        run: |
+          npm run build
+          npm run package
+          npm run hosts
+          (cd dist/hosts && zip -r ../break-reklams-hosts.zip .)
+      - name: Публикация релиза
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            dist/break-reklams-chrome.zip \
+            dist/break-reklams-firefox.zip \
+            dist/break-reklams-hosts.zip \
+            --title "Break Reklams $GITHUB_REF_NAME" \
+            --generate-notes

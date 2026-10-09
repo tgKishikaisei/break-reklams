@@ -1,0 +1,44 @@
+name: Реклама не заблокирована
+description: На сайте осталась реклама, всплывающее окно или окно «отключите AdBlock»
+labels: [реклама]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Адрес страницы
+      placeholder: https://example.com/page
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Что осталось
+      options:
+        - Реклама в видеоплеере
+        - Баннер или блок на странице
+        - Всплывающее окно или новая вкладка
+        - Окно «отключите блокировщик»
+        - Реклама на YouTube
+        - Другое
+    validations:
+      required: true
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Браузер
+      options:
+        - Chrome
+        - Edge
+        - Яндекс.Браузер
+        - Opera
+        - Brave
+        - Firefox
+        - DuckDuckGo (hosts-файл)
+        - Другой
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Подробности
+      description: Когда появляется реклама, что нужно нажать, скриншот (можно вставить картинку прямо сюда).

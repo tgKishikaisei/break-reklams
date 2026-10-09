@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Break Reklams — тестовая страница</title>
+  <script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+  <script src="https://www.googletagmanager.com/gtm.js?id=GTM-TEST"></script>
+  <style>
+    body { overflow: hidden; font: 16px system-ui, sans-serif; margin: 20px; }
+    .box { width: 300px; height: 60px; margin: 8px 0; background: #fde68a; }
+  </style>
+</head>
+<body>
+  <div id="content" class="box">Полезный контент</div>
+  <div id="promo" class="box">Промо-блок (для пипетки)</div>
+  <ins id="ins1" class="adsbygoogle box" data-ad-client="ca-pub-0000000000000000"></ins>
+  <div id="div-gpt-ad-123" class="box">GPT</div>
+  <div id="banner1" class="ad-banner box">Баннер</div>
+  <div id="yandex_rtb_R-A-1-2" class="box">Яндекс РСЯ</div>
+  <div id="custom1" class="custom-ad box">Свой фильтр</div>
+  <img id="adimg" src="https://ad.doubleclick.net/ddm/ad.gif" alt="">
+  <img id="okimg" src="https://images.example-cdn.test/photo.jpg" alt="">
+
+  <div id="wall" style="position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:99999;color:#fff;display:grid;place-items:center">
+    <div style="padding:24px;background:#222;border-radius:12px">Похоже, вы используете AdBlock. Пожалуйста, отключите блокировщик рекламы.</div>
+  </div>
+
+  <script>
+    window.__results = {};
+    setTimeout(() => {
+      const late = document.createElement('div');
+      late.id = 'late-ad';
+      late.className = 'advertisement box';
+      late.textContent = 'Реклама, добавленная позже';
+      document.body.appendChild(late);
+    }, 300);
+    window.googletag = window.googletag || { cmd: [] };
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({ event: 'test', eventCallback: () => { window.__results.gtmCallback = true; } });
+    googletag.cmd.push(() => {
+      googletag.defineSlot('/1/test', [300, 250], 'div-gpt-ad-123').addService(googletag.pubads());
+      googletag.enableServices();
+      googletag.display('div-gpt-ad-123');
+      window.__results.gptChain = true;
+    });
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</body>
+</html>

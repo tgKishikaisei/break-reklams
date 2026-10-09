@@ -1,0 +1,10 @@
+node_modules/
+# Chrome сам создаёт эту папку в распакованном расширении (индексы правил)
+extension/_metadata/
+filters/external/
+dist/
+*.zip
+*.xpi
+*.log
+.DS_Store
+Thumbs.db
